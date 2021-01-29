@@ -20,6 +20,7 @@ class BMESBIO2Data:
     def toData(self, markList=[]):
         """[将标记数据转换为格式化数据]
         返回数据为标记数据
+        返回数据集如下 (['【', '不', '良', '反', '应', '】', '⑴', '可', '见', '胃', '肠', '道', '不', '良', '反', '应', '，', '如', '恶', '心', '、', '呕', '吐', '、', '上', '腹', '疼', '痛', '、', '便', '秘', '。'], [{'type': '不良反应', 'word': ['恶', '心'], 'start': 18, 'end': 19}, {'type': '不良反应', 'word': ['呕', '吐'], 'start': 21, 'end': 22}, {'type': '不良反应', 'word': ['上', '腹', '疼', '痛'], 'start': 24, 'end': 27}, {'type': '不良反应', 'word': ['便', '秘'], 'start': 29, 'end': 30}])
 
         Args:
             markList (list, optional): [标记数据列表如“['常 O']”]. Defaults to [].
@@ -150,4 +151,22 @@ class BMESBIO2Data:
         # print(items[:10])
         for i, line in enumerate(items):
             # print(line)
-            print(self.toData(line))
+            # print(self.toData(line))
+            yield self.toData(line)
+
+    def data2BMES(self, words, mark):
+        """[将格式化的数据转换为BMES格式]
+
+        Args: [[self.toData输出words, mark]]. Defaults to [].
+        """
+        # print(words, mark)
+        for m in mark:
+            # mWords=m.get("word")
+            words[m.get("start")] = "[@"+words[m.get("start")]
+            words[m.get("end")] = ""+words[m.get("end")]+"#"+m.get("type")+"*]"
+        # print(words)
+
+        for i, w in enumerate(words):
+            words[i] = words[i].replace("##", "")
+        # 此处存在问题，两个英文单词该如何处理
+        return words
