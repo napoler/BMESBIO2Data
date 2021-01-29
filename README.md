@@ -1,11 +1,13 @@
-# 一个创建库的demo
-便于快速创建自己的第三方库
+# BMESBIO2Data
 
-## 快速上传操作
+一个用于将命名实体任务中输出的BIO、BMES数据转换为格式化数据的包。
+
+
+## 快速上传新版本包操作
 可以自动查找依赖，然后上传
 ```
 sh upload.sh
 ```
 
-文档查看
-https://www.terrychan.org/python_libs_demo/
+[项目地址](https://github.com/napoler/BMESBIO2Data)
+[查看文档](http://www.terrychan.org/BMESBIO2Data/)
