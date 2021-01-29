@@ -1,4 +1,14 @@
 {
     "jupyter.jupyterServerType": "local",
-    "activestate.promptRuntimeCreation": false
+    "activestate.promptRuntimeCreation": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./BMESBIO2Data",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true
 }

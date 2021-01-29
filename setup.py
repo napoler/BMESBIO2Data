@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
-from setuptools import find_packages, setup
-from os import path as os_path
+"""[用于将类打包发布时候的配置信息]
+    """
 import time
+from os import path as os_path
+
+from setuptools import find_packages, setup
+
 this_directory = os_path.abspath(os_path.dirname(__file__))
 
 # 读取文件内容
