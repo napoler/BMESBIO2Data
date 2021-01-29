@@ -5,8 +5,8 @@ import sys
 # 切换到上级目录
 sys.path.append("../")
 # 引入本地库
-import src
+import BMESBIO2Data
 
-Demo =src.Demo()
+Demo =BMESBIO2Data.Demo()
 Demo.fun()
 

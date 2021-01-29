@@ -23,12 +23,12 @@ def read_requirements(filename):
 
 long_description=read_file("README.md")
 setup(
-    name='tkitDemo', #修改包名字
+    name='BMESBIO2Data', #修改包名字
     version='0.0.0.1',
-    description='Terry toolkit tkitDemo',
+    description='Terry toolkit BMESBIO2Data',
     author='Terry Chan',
     author_email='napoler2008@gmail.com',
-    url='http://www.terrychan.org/python_libs_demo/',
+    url='https://www.terrychan.org/BMESBIO2Data/',
     install_requires=read_requirements('requirements.txt'),  # 指定需要安装的依赖
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -37,7 +37,7 @@ setup(
 
 
     # ],
-    packages=['src'])
+    packages=['BMESBIO2Data'])
 
 """
 pip freeze > requirements.txt
