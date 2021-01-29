@@ -16,7 +16,22 @@ class BMESBIO2Data:
         self.markType = markType
 
         pass
+    def autoLang(self,word):
+        """[自动检查文本语言，如果为英文则添加空格 unk 前后加入空格] 
 
+        Args:
+            word ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+        if (u'\u0041'<= word <= u'\u005a') or (u'\u0061'<= word <= u'\u007a'):
+            return word+" "
+        elif word=="[UNK]":
+            return " "+word+" "
+        else:
+            return word
+                        
     def toData(self, markList=[]):
         """[将标记数据转换为格式化数据]
         返回数据为标记数据
@@ -49,7 +64,9 @@ class BMESBIO2Data:
 
             # 处理合乎规则的数据
             if len(l) == 2:
-                word = l[0]
+                # 自动对英文添加空格处理
+                word = self.autoLang(l[0])
+                
                 words.append(word)
                 tag = l[1].replace("\n", '')
                 text.append(word)
