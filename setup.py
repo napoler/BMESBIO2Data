@@ -33,13 +33,23 @@ def read_requirements(filename):
 long_description = read_file("README.md")
 setup(
     name='BMESBIO2Data',  # 修改包名字
-    version='0.0.0.1',
+    version='0.0.0.3',
     description='Terry toolkit BMESBIO2Data',
     author='Terry Chan',
     author_email='napoler2008@gmail.com',
     url='https://www.terrychan.org/BMESBIO2Data/',
     install_requires=read_requirements('requirements.txt'),  # 指定需要安装的依赖
-    long_description=long_description,
+    long_description="""
+    
+    BMESBIO2Data
+    一个用于将命名实体任务中输出的BIO、BMES数据转换为格式化数据的包。
+    
+    [项目地址](https://github.com/napoler/BMESBIO2Data)
+    [查看文档](http://www.terrychan.org/BMESBIO2Data/)
+    
+    
+    
+    """,
     long_description_content_type="text/markdown",
     # install_requires=[
     #     # 'beautifulsoup4==4.7.1',
